@@ -59,3 +59,31 @@ const logDetails = (uid: StringOrNumber, item: string): void => {
 greet = (user: ObjWithName): void => {
   console.log(`Hello ${user.name}`)
 }
+
+// function signature
+// example 1
+let hello: (a: string, b: string) => void
+
+hello = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`)
+}
+
+// example 2
+let calc: (a: number, b: number, c: string) => number
+
+calc = (numOne: number, numTwo: number, action: string): number => {
+  if (action === 'add') {
+    return numOne + numTwo
+  } else {
+    return numOne - numTwo
+  }
+}
+
+// example 3
+let logIt: (obj: { name: string; age: number }) => void
+
+type person = { name: string; age: number }
+
+logIt = (ninja: person): void => {
+  console.log(`${ninja.name} is ${ninja.age}`)
+}

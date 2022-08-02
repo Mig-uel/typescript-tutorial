@@ -43,3 +43,24 @@ const logDetails = (uid, item) => {
 greet = (user) => {
     console.log(`Hello ${user.name}`);
 };
+// function signature
+// example 1
+let hello;
+hello = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
+};
+// example 2
+let calc;
+calc = (numOne, numTwo, action) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+// example 3
+let logIt;
+logIt = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age}`);
+};
