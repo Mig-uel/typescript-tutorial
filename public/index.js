@@ -37,3 +37,9 @@ const add = (a, b, c = 10) => {
 const minus = (a, b) => {
     return a - b;
 };
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
+};
+greet = (user) => {
+    console.log(`Hello ${user.name}`);
+};

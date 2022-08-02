@@ -47,3 +47,15 @@ const add = (a: number, b: number, c: number | string = 10) => {
 const minus = (a: number, b: number): number => {
   return a - b
 }
+
+// type alias
+type StringOrNumber = string | number
+type ObjWithName = { name: string; uid: StringOrNumber }
+
+const logDetails = (uid: StringOrNumber, item: string): void => {
+  console.log(`${item} has a uid of ${uid}`)
+}
+
+greet = (user: ObjWithName): void => {
+  console.log(`Hello ${user.name}`)
+}
