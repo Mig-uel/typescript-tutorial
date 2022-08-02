@@ -37,3 +37,13 @@ let mixedArray: any[] = []
 mixedArray.push(10)
 mixedArray.push('10')
 mixedArray.push(true)
+
+let greet: Function
+
+const add = (a: number, b: number, c: number | string = 10) => {
+  console.log(a + b)
+}
+
+const minus = (a: number, b: number): number => {
+  return a - b
+}

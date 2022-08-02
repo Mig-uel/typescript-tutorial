@@ -30,3 +30,10 @@ let mixedArray = [];
 mixedArray.push(10);
 mixedArray.push('10');
 mixedArray.push(true);
+let greet;
+const add = (a, b, c = 10) => {
+    console.log(a + b);
+};
+const minus = (a, b) => {
+    return a - b;
+};
