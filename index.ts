@@ -27,3 +27,13 @@ ninjaTwo = {
   beltColor: 'black',
   id: 10,
 }
+
+// any type
+let id: any
+id = 10
+id = '10'
+
+let mixedArray: any[] = []
+mixedArray.push(10)
+mixedArray.push('10')
+mixedArray.push(true)

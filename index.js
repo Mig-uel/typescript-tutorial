@@ -21,3 +21,11 @@ ninjaTwo = {
     beltColor: 'black',
     id: 10
 };
+// any type
+var id;
+id = 10;
+id = '10';
+var mixedArray = [];
+mixedArray.push(10);
+mixedArray.push('10');
+mixedArray.push(true);
