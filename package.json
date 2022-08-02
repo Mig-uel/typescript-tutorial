@@ -7,7 +7,7 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "dev": "tsc ./build/index.ts --watch",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

@@ -1,31 +1,32 @@
+"use strict";
 // explicit types
-var character;
-var age;
-var isLoggedIn;
+let character;
+let age;
+let isLoggedIn;
 character = 'Yoshi';
 age = 30;
 isLoggedIn = true;
 // arrays
-var ninjas = [];
+let ninjas = [];
 // union types
-var mixed = [];
-var uid;
+let mixed = [];
+let uid;
 uid = 10;
 uid = '10';
 // objects
-var ninjaOne;
-var ninjaTwo;
+let ninjaOne;
+let ninjaTwo;
 ninjaTwo = {
     name: 'Yoshi',
     age: 30,
     beltColor: 'black',
-    id: 10
+    id: 10,
 };
 // any type
-var id;
+let id;
 id = 10;
 id = '10';
-var mixedArray = [];
+let mixedArray = [];
 mixedArray.push(10);
 mixedArray.push('10');
 mixedArray.push(true);
