@@ -1,66 +1,34 @@
 "use strict";
-// explicit types
-let character;
-let age;
-let isLoggedIn;
-character = 'Yoshi';
-age = 30;
-isLoggedIn = true;
-// arrays
-let ninjas = [];
-// union types
-let mixed = [];
-let uid;
-uid = 10;
-uid = '10';
-// objects
-let ninjaOne;
-let ninjaTwo;
-ninjaTwo = {
-    name: 'Yoshi',
-    age: 30,
-    beltColor: 'black',
-    id: 10,
-};
-// any type
-let id;
-id = 10;
-id = '10';
-let mixedArray = [];
-mixedArray.push(10);
-mixedArray.push('10');
-mixedArray.push(true);
-let greet;
-const add = (a, b, c = 10) => {
-    console.log(a + b);
-};
-const minus = (a, b) => {
-    return a - b;
-};
-const logDetails = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
-};
-greet = (user) => {
-    console.log(`Hello ${user.name}`);
-};
-// function signature
-// example 1
-let hello;
-hello = (name, greeting) => {
-    console.log(`${name} says ${greeting}`);
-};
-// example 2
-let calc;
-calc = (numOne, numTwo, action) => {
-    if (action === 'add') {
-        return numOne + numTwo;
+// const anchor = document.querySelector('a')
+// const anchor = document.querySelector('a')!
+// console.log(anchor?.href)
+// const form = document.querySelector('form')
+/* ------ Classes ------ */
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
     }
-    else {
-        return numOne - numTwo;
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
     }
-};
-// example 3
-let logIt;
-logIt = (ninja) => {
-    console.log(`${ninja.name} is ${ninja.age}`);
-};
+}
+const invoiceOne = new Invoice('mario', 'website', 200);
+const invoiceTwo = new Invoice('luigi', 'website', 400);
+console.log(invoiceOne, invoiceTwo);
+let invoices = [];
+invoices.push(invoiceOne);
+invoices.push(invoiceTwo);
+/* ------ Form ------
+   Type Casting (as) - allows to get all properties of an object */
+const form = document.querySelector('.new-item-form');
+/* ------ Inputs ------ */
+const type = document.querySelector('#type');
+const tofrom = document.querySelector('#tofrom');
+const details = document.querySelector('#details');
+const amount = document.querySelector('#amount');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+});
