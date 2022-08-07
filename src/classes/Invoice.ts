@@ -1,5 +1,7 @@
+import HasFormatter from '../interfaces/HasFormatter'
+
 /* ------ Classes ------ */
-class Invoice {
+class Invoice implements HasFormatter {
   // Access Modifiers
   // readonly: can only be assigned once in the constructor (like a const) and cannot be reassigned later
   // private: can only be accessed inside class
