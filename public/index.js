@@ -52,12 +52,20 @@ const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    let values = [
+        tofrom.value,
+        details.value,
+        amount.valueAsNumber,
+    ];
     let doc;
     type.value === 'invoice'
-        ? (doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber))
-        : (doc = new Payment(tofrom.value, details.value, amount.valueAsNumber));
+        ? (doc = new Invoice(...values))
+        : (doc = new Payment(...values));
     list.render(doc, type.value, 'end');
 });
+/* ------ Tuples ------ */
+let arr = ['ryu', 25, true];
+let tup = ['ryu', 25, true]; // can't change the types position
 /* ------ Generics ------ */
 const addUID = (obj) => {
     // extends {name: string}
@@ -65,14 +73,23 @@ const addUID = (obj) => {
     return Object.assign(Object.assign({}, obj), { uid });
 };
 let docOne = addUID({ name: 'yoshi', age: 40 });
-console.log(docOne.name);
+/* ------ Enums ------ */
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+    ResourceType[ResourceType["LIST"] = 5] = "LIST";
+})(ResourceType || (ResourceType = {}));
 const docThree = {
     uid: 1,
-    resourceName: 'person',
+    resourceName: ResourceType.PERSON,
     data: 'miguel',
 };
 const docFour = {
     uid: 2,
-    resourceName: 'shopping list',
+    resourceName: ResourceType.LIST,
     data: ['bread', 'paper'],
 };

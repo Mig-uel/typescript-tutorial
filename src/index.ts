@@ -68,14 +68,25 @@ const amount = document.querySelector('#amount') as HTMLInputElement
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault()
 
+  let values: [string, string, number] = [
+    tofrom.value,
+    details.value,
+    amount.valueAsNumber,
+  ]
+
   let doc: HasFormatter
 
   type.value === 'invoice'
-    ? (doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber))
-    : (doc = new Payment(tofrom.value, details.value, amount.valueAsNumber))
+    ? (doc = new Invoice(...values))
+    : (doc = new Payment(...values))
 
   list.render(doc, type.value, 'end')
 })
+
+/* ------ Tuples ------ */
+let arr = ['ryu', 25, true]
+
+let tup: [string, number, boolean] = ['ryu', 25, true] // can't change the types position
 
 /* ------ Generics ------ */
 const addUID = <T extends object>(obj: T) => {
