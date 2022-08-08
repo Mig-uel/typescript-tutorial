@@ -86,24 +86,32 @@ const addUID = <T extends object>(obj: T) => {
 
 let docOne = addUID({ name: 'yoshi', age: 40 })
 
-console.log(docOne.name)
+/* ------ Enums ------ */
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+  LIST,
+}
 
 /* ------ Generics With Interfaces ------ */
 interface Resource<T> {
   // how an object or class should be structured
   uid: number
-  resourceName: string
+  resourceName: ResourceType
   data: T
 }
 
 const docThree: Resource<string> = {
   uid: 1,
-  resourceName: 'person',
+  resourceName: ResourceType.PERSON,
   data: 'miguel',
 }
 
 const docFour: Resource<string[]> = {
   uid: 2,
-  resourceName: 'shopping list',
+  resourceName: ResourceType.LIST,
   data: ['bread', 'paper'],
 }
